@@ -1,0 +1,15 @@
+/* Custom styling for Markdown PDF export */
+
+/* Change inline code color from pale brown to dark */
+code {
+  color: #000000 !important;  /* Black */
+  background-color: #f4f4f4 !important;  /* Light gray background */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Optional: Style code blocks differently if needed */
+pre code {
+  color: #24292e;
+  background-color: #f6f8fa;
+}

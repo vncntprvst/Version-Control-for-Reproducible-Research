@@ -1,0 +1,8 @@
+* Create test repository with a few files
+* Prepare what will be done: Create a few commits, add tags, show how to use branches, show how to push to GitHub 
+* Have a notebook with figures, to show how to handle them 
+* Prepare large binary file 
+* Prepare a few commits with merge conflicts to show how to resolve them
+* Select existing public repository to show how to clone and work with an existing repo.
+
+* Show use to track changes made by AI agents in a repository, and how to use branches to manage different versions of the code.

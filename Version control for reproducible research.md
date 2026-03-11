@@ -91,8 +91,12 @@ See the `cheat sheet.md` file.
 ### Code / text versioning
 
 **Pain points**
-* Data files too large
+* Authenticating with GitHub from the command line (e.g., setting up personal access tokens, or using GitHub CLI)
+* Data files - managing large files
 * Notebooks (especially with plots)
+* Binary files (e.g. .docx, .pdf) are not well-suited for version control with Git
+* Merging conflicts (e.g., when branches diverge and then need to be merged back together)
+
 
 ## Managing large files with git
 

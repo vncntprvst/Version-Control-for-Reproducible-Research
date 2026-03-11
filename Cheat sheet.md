@@ -1,19 +1,43 @@
 
 # Git Cheat Sheet — Version Control for Reproducible Research
 
-## 🔧 First-Time Setup (do this once)
+## Quick Command Reference
+
+| What you want to do | Command |
+|---|---|
+| Start a repo | `git init` |
+| Check status | `git status` |
+| Stage files | `git add .` |
+| Commit | `git commit -m "msg"` |
+| See history | `git log --oneline` |
+| Tag a milestone | `git tag -a v1.0 -m "note"` |
+| Switch branches | `git checkout branch-name` |
+| Create a branch | `git checkout -b name` |
+| Merge branch "name" into current branch | `git merge name` |
+| Push to Code Hosting Service | `git push origin main` |
+| Pull from Code Hosting Service | `git pull origin main` |
+| Undo uncommitted edits | `git checkout -- file` |
+
+
+There are a few code hosting services that integrate with Git. The most popular is GitHub, but there are also GitLab, Bitbucket, Codeberg, and others. All the Git commands below that mention Github will work with any of these services.  
+
+---
+
+## First-Time Setup (do this once)
 
 ```bash
 git config --global user.name "Your Name"
 git config --global user.email "you@example.com"
-git config --global init.defaultBranch main
+
+[optional] git config --global init.defaultBranch main
 ```
 
-> These identify you as the author of your changes. Use the email associated with your GitHub account.
+> **Note:** Use the email associated with your GitHub account for proper attribution, but you can use any email address if needed.
 
----
 
-## 📁 Starting a Project
+<div class="page"/>
+
+## Starting a Project
 
 | Task | Command |
 |---|---|
@@ -23,7 +47,7 @@ git config --global init.defaultBranch main
 
 ---
 
-## 📸 The Core Workflow: Edit → Stage → Commit
+## The Core Workflow: Edit → Stage → Commit
 
 Think of it like photography: you **arrange** what goes in the shot (stage), then **take the picture** (commit).
 
@@ -44,7 +68,7 @@ Think of it like photography: you **arrange** what goes in the shot (stage), the
 
 ---
 
-## 💬 Writing Good Commit Messages
+## Writing Good Commit Messages
 
 **Do this** ✅ | **Not this** ❌
 ---|---
@@ -54,21 +78,26 @@ Think of it like photography: you **arrange** what goes in the shot (stage), the
 
 > **Tip:** Write messages that your future self will thank you for in 6 months.
 
----
 
-## 📜 Viewing History
+<div class="page"/>
+
+## Viewing History
 
 | Task | Command |
 |---|---|
 | See full commit history | `git log` |
 | Compact one-line history | `git log --oneline` |
-| See what changed in each commit | `git log --stat` |
+| See history for the n most recent commits | `git log -n 5` |
+| See **which files** changed in each commit | `git log --name-only` |
+| See **what changed** in each commit | `git log --stat` |
 | See the diff of uncommitted changes | `git diff` |
-| See who changed what line (useful for collabs!) | `git blame filename` |
+| See who changed what line (useful for collabs!) | `git blame <filename>` | (This can be overwhelming for large files, so use with caution. To quit the blame view, press `q`)
 
+  
 ---
+  
 
-## 🏷️ Tags: Marking Milestones
+## Tags: Marking Milestones
 
 Tags are bookmarks for important moments — manuscript submissions, analysis freezes, releases.
 
@@ -85,9 +114,10 @@ Tags are bookmarks for important moments — manuscript submissions, analysis fr
 - `v1.1-revised` — post-review revision
 - `analysis-freeze-2026-03` — data analysis locked
 
----
 
-## 🌿 Branches: Safe Experimentation
+<div class="page"/>
+
+## Branches
 
 Branches let you try things without breaking what works.
 
@@ -102,7 +132,7 @@ Branches let you try things without breaking what works.
 
 ---
 
-## 🤝 Collaborating with GitHub
+## Collaborating with GitHub
 
 | Task | Command |
 |---|---|
@@ -123,9 +153,11 @@ Branches let you try things without breaking what works.
 
 > **Golden rule:** Always `pull` before you `push`.
 
----
 
-## 🛟 Oops! Fixing Mistakes
+<div class="page"/>
+
+
+## Oops! Fixing Mistakes
 
 | Situation | Command |
 |---|---|
@@ -139,7 +171,7 @@ Branches let you try things without breaking what works.
 
 ---
 
-## 🚫 The `.gitignore` File
+## The `.gitignore` File
 
 Create a file called `.gitignore` in your repo to tell Git what **not** to track:
 
@@ -162,7 +194,8 @@ __pycache__/
 
 > **Tip:** Never commit passwords, API keys, large data files, or generated outputs.
 
----
+
+<div class="page"/>
 
 ## 🗺️ Mental Model
 
@@ -176,24 +209,6 @@ __pycache__/
 │  Local Repo      │◀── git pull ──│  Backup          │
 └──────────────────┘               └──────────────────┘
 ```
-
----
-
-## 📚 Quick Reference Card
-
-| What you want to do | Command |
-|---|---|
-| Start a repo | `git init` |
-| Check status | `git status` |
-| Stage files | `git add .` |
-| Commit | `git commit -m "msg"` |
-| See history | `git log --oneline` |
-| Tag a milestone | `git tag -a v1.0 -m "note"` |
-| Create a branch | `git checkout -b name` |
-| Merge a branch | `git merge name` |
-| Push to Code Hosting Service | `git push origin main` |
-| Pull from Code Hosting Service | `git pull origin main` |
-| Undo uncommitted edits | `git checkout -- file` |
 
 ---
 
