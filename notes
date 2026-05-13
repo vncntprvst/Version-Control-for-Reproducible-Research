@@ -1,3 +1,5 @@
+Session 1
+
 * Create test repository with a few files
 * Prepare what will be done: Create a few commits, add tags, show how to use branches, show how to push to GitHub 
 * Have a notebook with figures, to show how to handle them 
@@ -6,3 +8,26 @@
 * Select existing public repository to show how to clone and work with an existing repo.
 
 * Show use to track changes made by AI agents in a repository, and how to use branches to manage different versions of the code.
+
+Session 2
+
+Recap session 1:
+Set up name / email 
+Init repo
+Stage / commit
+
+Session 2: show session plan
+Branches
+Remotes
+Push to remote
+Checkout branch
+Pull from remote on cluster
+Commit and merge
+Merge with conflict
+Tags
+Pull requests
+
+Set up zoom if needed
+Request node in advance
+Make figures / pdf
+Prep laptop and test
