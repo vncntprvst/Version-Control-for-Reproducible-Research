@@ -378,6 +378,97 @@ git merge branch-b        # CONFLICT — now resolve it together
 
 ---
 
+## 6. Branch, Merge, Push, Pull, Tag
+
+This is the day-to-day workflow for changing a shared research codebase without making every edit directly on `main`.
+
+### Core model
+
+| Concept | Research analogy |
+|---|---|
+| Branch | A separate workspace for one analysis change, bug fix, or documentation update |
+| Commit | A labeled snapshot of one coherent step |
+| Merge | Bring the completed branch back into the shared project history |
+| Push | Publish local commits to GitHub or another remote host |
+| Pull | Bring remote commits down to another computer, cluster, or collaborator machine |
+| Tag | Name one exact commit as a milestone: release, manuscript submission, analysis freeze |
+
+### Clean feature workflow
+
+```bash
+# Start from the shared branch
+git switch main
+git pull --ff-only
+
+# Create a branch for one focused change
+git switch -c feature/config-checklist
+
+# Edit files, then inspect the change
+git status
+git diff
+
+# Stage and commit
+git add docs/config-checklist.md
+git commit -m "Add config checklist documentation"
+
+# Merge back to main
+git switch main
+git merge feature/config-checklist
+
+# Publish to GitHub
+git push origin main
+```
+
+### Pulling on another machine
+
+This is common when moving between a laptop, lab workstation, and cluster login node.
+
+```bash
+cd 2P-proc
+git status
+git pull --ff-only
+```
+
+Use `--ff-only` when teaching beginners because it refuses to create an unexpected merge commit during pull. If it fails, Git is telling you that local and remote histories diverged and need attention.
+
+### Tagging milestones
+
+Use tags when you need to recover the exact code state used for an important result.
+
+```bash
+# Annotated tag, recommended for meaningful milestones
+git tag -a analysis-freeze-2026-05 -m "Analysis freeze for May 2026 results"
+
+# Share the tag
+git push origin analysis-freeze-2026-05
+
+# Later, list or inspect tags
+git tag
+git show analysis-freeze-2026-05
+```
+
+Good tag names:
+
+```text
+v0.2.0
+manuscript-submission-2026-05
+analysis-freeze-2026-05
+boost-demo-2026-05
+```
+
+### Practical rules
+
+| Rule | Why it helps |
+|---|---|
+| Pull before starting work | Avoids building on stale history |
+| One branch per task | Makes review and rollback easier |
+| Commit small coherent changes | Makes the history readable |
+| Read `git diff` before `git commit` | Prevents accidental files from entering history |
+| Push when work should be shared or backed up | Makes the work available on other machines |
+| Tag exact states used for results | Supports reproducibility months later |
+
+---
+
 ## Quick Reference: What Goes Where
 
 ```
